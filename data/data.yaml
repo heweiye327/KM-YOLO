@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 9
+names: ['Car', 'Cyclist', 'DontCare', 'Misc', 'Pedestrian', 'Person_sitting', 'Tram', 'Truck', 'Van']
+
+roboflow:
+  workspace: anshspace-xuetk
+  project: kitti-low-light
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/anshspace-xuetk/kitti-low-light/dataset/1
