@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Training outputs
+runs/
+wandb/
+.cache/
+*.log
+
+# Dataset images and labels
+data/train/
+data/valid/
+data/test/
+data/*.zip
+datasets/
+images/
+labels/
+
+# Model weights and exported models
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
