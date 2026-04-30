@@ -215,6 +215,20 @@ The detection results will be saved in:
 ```text
 runs/detect/predict/
 ```
+## Training Logs
+
+Training logs and evaluation curves are provided in the `logs/` folder.
+
+```text
+logs/
+├── results.csv
+├── results.png
+├── PR_curve.png
+├── F1_curve.png
+├── P_curve.png
+├── R_curve.png
+├── confusion_matrix.png
+└── args.yaml
 
 ## Experimental Results
 
