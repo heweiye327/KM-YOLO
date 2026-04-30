@@ -134,12 +134,24 @@ The trained weights will be saved in:
 runs/train/KM-YOLO/weights/
 ```
 
-## Validation
+## Validation with Trained Model
 
-After training, modify the weight path in `test.py`:
+To evaluate the trained KM-YOLO model on the validation set, please first make sure that the trained weight file is placed at:
 
-```python
-model_path = 'runs/train/KM-YOLO/weights/best.pt'
+```text
+weights/best.pt
+```
+
+The dataset configuration file is:
+
+```text
+data/data.yaml
+```
+
+The validation set path is defined in `data/data.yaml`. For example:
+
+```yaml
+val: ../valid/images
 ```
 
 Then run:
@@ -148,7 +160,15 @@ Then run:
 python test.py
 ```
 
-The validation script reports the following metrics:
+In `test.py`, the model weight path should be set as:
+
+```python
+model_path = 'weights/best.pt'
+```
+
+The validation script will load the trained KM-YOLO model and evaluate it on the validation set defined in `data/data.yaml`.
+
+The following metrics will be reported:
 
 - Precision
 - Recall
@@ -160,24 +180,34 @@ The validation script reports the following metrics:
 - GFLOPs
 - FPS
 - Model file size
+## Inference with Trained Model
 
-## Inference
+To run detection with the trained KM-YOLO model, please make sure that the trained weight file is placed at:
 
-To perform inference on a single image, modify the model path and image path in `detect.py`:
-
-```python
-from ultralytics import YOLO
-
-model = YOLO('runs/train/KM-YOLO/weights/best.pt')
-source = 'path/to/test/image.jpg'
-
-model.predict(source, save=True)
+```text
+weights/best.pt
 ```
 
 Then run:
 
 ```bash
 python detect.py
+```
+
+In `detect.py`, the model should be loaded as:
+
+```python
+from ultralytics import YOLO
+
+model = YOLO('weights/best.pt')
+source = 'demo/sample.jpg'
+
+model.predict(
+    source=source,
+    imgsz=640,
+    conf=0.25,
+    save=True
+)
 ```
 
 The detection results will be saved in:
