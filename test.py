@@ -18,9 +18,9 @@ def get_weight_size(path):
     return f'{stats.st_size / 1024 / 1024:.1f}'                                                                                                                                                                                                           
 
 if __name__ == '__main__':
-    model_path = '/root/autodl-tmp/ultralytics-yolo11and12/ultralytics-yolo11-main/runs/train/yolov8/weights/last.pt'
+  model_path = 'weights/best.pt'
     model = YOLO(model_path) # 选择训练好的权重路径
-    result = model.val(data='/root/autodl-tmp/ultralytics-yolo11and12/ultralytics-yolo11-main/data/data.yaml',
+result = model.val(data='data/data.yaml',
                         split='val', # split可以选择train、val、test 根据自己的数据集情况来选择.
                         imgsz=640,
                         batch=32,
