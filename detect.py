@@ -1,6 +1,15 @@
 from ultralytics import YOLO
-# 加载训练好的模型，改为自己的路径
-model = YOLO('weights/best.pt')  #修改为训练好的路径
-source = 'demo/sample.jpg' #修改为自己的图片路径及文件名
-# 运行推理，并附加参数
-model.predict(source, save=True)
+
+# Load the trained KM-YOLO model
+model = YOLO('weights/best.pt')
+
+# Sample image for inference
+source = 'demo/sample.jpg'
+
+# Run inference
+model.predict(
+    source=source,
+    imgsz=640,
+    conf=0.25,
+    save=True
+)
