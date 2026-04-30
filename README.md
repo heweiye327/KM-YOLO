@@ -2,7 +2,7 @@
 
 ## Notice
 
-The relevant code files will be made publicly available upon acceptance of the manuscript. Training logs and pretrained model weights will be provided for reference after acceptance.
+This work has been submitted to PRCV 2026. The complete implementation will be made publicly available upon acceptance of the manuscript.
 This repository provides the source code of KM-YOLO, an improved YOLO-based pedestrian detection model for low-light traffic scenes.
 
 Low-light pedestrian detection is challenging because pedestrians often suffer from low contrast, weak texture information, blurred edges, partial occlusion, and complex background interference. To address these problems, KM-YOLO introduces the PKI module and the MAN module into the YOLO framework to enhance local texture extraction, multi-scale feature representation, and cross-layer feature aggregation.
